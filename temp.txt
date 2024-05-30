@@ -1,0 +1,14 @@
+for enabling numlock on sddm:
+https://wiki.archlinux.org/title/Activating_numlock_on_bootup (follow 2.7 SDDM)
+
+current hyprland.conf for enabling volume and brightness keys:
+
+bind=,XF86MonBrightnessDown,exec,brightnessctl set 5%- 
+bind=,XF86MonBrightnessUp,exec,brightnessctl set +5% 
+
+bindel=, XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+bindel=, XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindl=, XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+
+1 sets scaling to 1x
+monitor=,preferred,auto,1
